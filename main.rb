@@ -1,6 +1,6 @@
 require 'bigdecimal'
 
-def main()
+def main
 
   monthly_income = -1
   while monthly_income < 0 do
@@ -50,11 +50,11 @@ def sss_compute(monthly_income)
     sss = 180.00
   when 4250...29750
     value = (monthly_income-4250)/500 + 1
-    sss += (value.floor() * 22.50)
+    sss += (value.floor * 22.50)
   else
     sss = 1350.00
   end
-  return sss
+  sss
 end
 
 def philhealth_compute(monthly_income)
@@ -66,7 +66,7 @@ def philhealth_compute(monthly_income)
   else
     phil_health = BigDecimal(1800)
   end
-  return phil_health
+  phil_health
 end
 
 def pagibig_compute(monthly_income)
@@ -80,7 +80,7 @@ def pagibig_compute(monthly_income)
   else
     pagibig = value * 0.01
   end
-  return pagibig
+  pagibig
 end
 
 def incometax_compute(deducted_income)
@@ -98,8 +98,7 @@ def incometax_compute(deducted_income)
   else
     tax = 183541.80 + ((deducted_income-666667)*0.35)
   end
-  return tax
+  tax
 end
 
-
-main()
+main
