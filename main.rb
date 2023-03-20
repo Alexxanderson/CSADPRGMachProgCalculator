@@ -46,7 +46,7 @@ end
 def sss_compute(monthly_income)
   sss = 180.00
   case monthly_income # switch case
-  when 0...4250
+  when -Float::INFINITY...4250
     sss = 180.00
   when 4250...29750
     value = (monthly_income-4250)/500 + 1
@@ -85,7 +85,7 @@ end
 
 def incometax_compute(deducted_income)
   case deducted_income
-  when 0..20832
+  when -Float::INFINITY..20832
     tax = 0.00
   when 20833..33332
     tax = 0.00 + ((deducted_income-20833)*0.15)
