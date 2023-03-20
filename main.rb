@@ -17,27 +17,27 @@ def main
     end
   end
 
-  puts "\nTax Computation\n"
+  puts "\nTax Computation"
   sss = sss_compute(monthly_income)
   phil_health = philhealth_compute(monthly_income)
   pagibig = pagibig_compute(monthly_income)
   total_contributions = sss + phil_health + pagibig
   income_tax = incometax_compute(monthly_income-total_contributions)
 
-  #Monthly Contributions
-  puts "Monthly Contribution"
+  # monthly contribution panel
+  puts "\nMonthly Contribution"
   puts "SSS: #{sss.to_f}"
   puts "PhilHealth: #{phil_health.to_f}"
   puts "Pag-IBIG: #{pagibig.to_f}"
   puts "Total Contribution: #{total_contributions.to_f}"
   puts "\n"
 
-  # Tax Computation
+  # tax computation panel
   puts "Income Tax: #{income_tax.to_f}"
   puts "Net pay after Tax: " + (monthly_income - income_tax).to_f.to_s
   puts "\n"
 
-  # total contributions
+  # total contributions panel
   puts "Total Deductions: " + (income_tax + total_contributions).to_f.to_s
   puts "Net Pay After Deductions: " + (monthly_income - (income_tax + total_contributions)).to_f.to_s
 end
@@ -54,7 +54,7 @@ def sss_compute(monthly_income)
   else
     sss = 1350.00
   end
-  sss
+  sss # return
 end
 
 def philhealth_compute(monthly_income)
@@ -66,7 +66,7 @@ def philhealth_compute(monthly_income)
   else
     phil_health = BigDecimal(1800)
   end
-  phil_health
+  phil_health # return
 end
 
 def pagibig_compute(monthly_income)
@@ -80,7 +80,7 @@ def pagibig_compute(monthly_income)
   else
     pagibig = value * 0.01
   end
-  pagibig
+  pagibig # return
 end
 
 def incometax_compute(deducted_income)
@@ -98,7 +98,7 @@ def incometax_compute(deducted_income)
   else
     tax = 183541.80 + ((deducted_income-666667)*0.35)
   end
-  tax
+  tax # return
 end
 
 main
